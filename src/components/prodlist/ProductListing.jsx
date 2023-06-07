@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "./ProductListing.css";
 
+// step1: declare state variables
 function ProductListing() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    // Fetch products
+    // step2: fetch products
      fetch("http://localhost:3000/products")
      .then((response) => response.json())
      .then((data) => setProducts(data));
@@ -28,6 +29,7 @@ function ProductListing() {
               </tr>
             </thead>
             <tbody>
+              {/* step3: Map over the products array and display product details */}
               {products.map((product) => (
                 <tr key={product.id}>
                   <td>{product.name}</td>
