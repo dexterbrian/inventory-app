@@ -1,19 +1,38 @@
 .product-container {
-    padding: 0;
-    margin: 0;
+    padding: 20px;
+    margin: 0 auto;
+    border-radius: 20%;
+    background-color: white;
+    left: 10%;
+    right: 10%;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+  
+.add-product-button {
+    background-color: #03254c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
 }
 
 .product-title {
     text-align: left;
     color: #03254c;
-    font-size: 20px;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 .product-table {
     width: 70%;
     position: absolute;
     border-collapse: collapse;
-    align-items: center;
     left: 20%;
 }
 
@@ -22,13 +41,17 @@ td, th {
 }
 
 .product-table th {
-    background-color: #000;
+    background-color: #5a5f83;
     color: #fff;
     text-align: center;
 }
 
 .product-listing-table td {
     text-align: left;
+}
+
+.product-table tr {
+    border-bottom: 1px solid #ddd;
 }
 
 tr:nth-child(odd){
