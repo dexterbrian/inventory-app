@@ -1,0 +1,26 @@
+.product-container {
+    padding: 20px;
+    margin: 20px;
+}
+
+.product-title {
+    text-align: left;
+    color: #b00cd8;
+    font-size: 30px;
+}
+
+.product-table {
+    width: 80%;
+    position: absolute;
+    border-collapse: collapse;
+}
+
+.product-table th {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+}
+
+.product-listing-table td {
+    text-align: left;
+}

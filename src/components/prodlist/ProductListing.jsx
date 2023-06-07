@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "./ProductListing.css";
 
 function ProductListing() {
   const [products, setProducts] = useState([]);
