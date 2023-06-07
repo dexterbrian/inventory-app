@@ -13,7 +13,7 @@ function ProductListing() {
 
   return (
     <div className="product-container">
-      <h2 className="product-title">Product Listing</h2>
+      <h2 className="product-title">Home Products</h2>
       <table className="product-table">
         <thead>
           <tr>

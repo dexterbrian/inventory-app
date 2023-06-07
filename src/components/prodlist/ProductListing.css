@@ -1,18 +1,24 @@
 .product-container {
-    padding: 20px;
-    margin: 20px;
+    padding: 0;
+    margin: 0;
 }
 
 .product-title {
     text-align: left;
-    color: #b00cd8;
-    font-size: 30px;
+    color: #03254c;
+    font-size: 20px;
 }
 
 .product-table {
-    width: 80%;
+    width: 70%;
     position: absolute;
     border-collapse: collapse;
+    align-items: center;
+    left: 20%;
+}
+
+td, th {
+    padding: 15px 10px;
 }
 
 .product-table th {
@@ -23,4 +29,8 @@
 
 .product-listing-table td {
     text-align: left;
+}
+
+tr:nth-child(odd){
+    background-color: #D3D3D3;
 }
