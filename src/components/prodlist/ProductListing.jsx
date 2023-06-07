@@ -14,7 +14,7 @@ function ProductListing() {
   return (
     <div className="background-container">
         <div className="product-container">
-          <nav className="navbar">
+          <nav className="listings-header">
             <h2 className="product-title">Home Products</h2>
             <button className="add-product-button">+ New Product</button>
           </nav>
