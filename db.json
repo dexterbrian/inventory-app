@@ -1,88 +1,53 @@
 {
     "products" : [  
-      {
+          {
         "id": 1,
         "name": "Leather Recliner Sofa",
-        "description": "Elegant and comfortable velvet sofa.",
+        "description": "Elegant and comfortable leather sofa.",
         "category": "Furniture",
         "quantity": 10
       },
       {
         "id": 2,
-        "name": "Blob Mirror",
-        "description": "Blob-shaped backlit LED mirror.",
-        "category": "Mirrors",
-        "quantity": 3
+        "name": "Floor rug",
+        "description": "Handmade tufted rug",
+        "category": "Decor",
+        "quantity": 19
       },
       {
         "id": 3,
-        "name": "Living Room Table",
-        "description": "A wooden, stylish and well furnished table",
-        "category": "Furniture",
-        "quantity": 5
-      },
-      {
-        "id": 4,
         "name": "Canvas Set",
         "description": "3 sets of abstract line color paintings.",
         "category": "Decor",
         "quantity": 8
       },
       {
-        "id": 5,
+        "id": 4,
         "name": "Flush Lights",
         "description": "Round flush mount light.",
         "category": "Lighting",
         "quantity": 15
       },
       {
-        "id": 6,
+        "id": 5,
         "name": "Curved Mirror",
         "description": "Irregular asymmetric curved mirror.",
         "category": "Mirrors",
         "quantity": 7
       },
       {
-        "id": 7,
+        "id": 6,
         "name": "Yellow Curtains",
         "description": "Lemon yellow modern curtains.",
         "category": "Curtains",
         "quantity": 12
       },
       {
-        "id": 8,
+        "id": 7,
         "name": "Hanging lights",
         "description": "Loft suspended glass pendant light fixtures",
         "category": "Lighting",
         "quantity": 1
-      },
-      {
-        "id": 9,
-        "name": "Velvet Curtains",
-        "description": "A pair of luxury velvet curtains",
-        "category": "Curtains",
-        "quantity": 3
-      },
-      {
-        "id": 10,
-        "name": "Ceramic vase",
-        "description": "Simple, Hand crafted ceramic vase",
-        "category": "Decor",
-        "quantity": 14
-      },
-      {
-        "id": 11,
-        "name": "Full Length Mirror",
-        "description": "Has thin wooden frame",
-        "category": "Mirrors",
-        "quantity": 7
-      },
-      {
-        "id": 12,
-        "name": "Floor rug",
-        "description": "Handmade tufted rug",
-        "category": "Decor",
-        "quantity": 19
       }
-    ]
-}
+      ]
+  }
