@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import "./AddProduct.css";
 
-function AddProductForm(addProduct) {
+function AddProductForm() {
     // step1: define state variables
     let [name, setName] = useState("");
     let [description, setDescription] = useState("");
@@ -9,15 +9,15 @@ function AddProductForm(addProduct) {
     let [quantity, setQuantity] = useState("");
 
     // step2: handleSubmit function
-    const handleFormSubmit = async (event) => {
+    const handleSubmit = (event) => {
       event.preventDefault();
 
     // step3: new product object
     const newProduct = {
-      name: name,
-      description: description,
-      category: category,
-      quantity: quantity,
+      name,
+      description,
+      category,
+      quantity,
     };
 
     // step4: POST request to add new Product to backend
@@ -31,8 +31,8 @@ function AddProductForm(addProduct) {
       .then((response) => response.json())
       .then((data) => 
       {
-        // success adding product, yaay! :)
-        console.log("Product added:", data);
+        // success adding product
+        console.log("Product has been added", data);
         setName("");
         setDescription("");
         setCategory("");
@@ -41,14 +41,62 @@ function AddProductForm(addProduct) {
 
       .catch((error) => {
         // console.log an error if it occurs when trying to add new product :(
-        console.error("Try again:", error);
+        console.error("Error adding product!", error);
       });
+
+    // step5: render the product
+    return (
+      <div className="add-product-container">
+        <form className="add-product-form" onSubmit={handleSubmit}>
+
+        <div className="form-group">
+          <label htmlFor="name">Name</label>
+          <input
+            type="text"
+            id="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="description">Description</label>
+          <textarea
+            id="description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            required
+          ></textarea>
+        </div>
+        <div className="form-group">
+          <label htmlFor="category">Category</label>
+          <input
+            type="text"
+            id="category"
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="quantity">Quantity</label>
+          <input
+            type="number"
+            id="quantity"
+            value={quantity}
+            onChange={(e) => setQuantity(e.target.value)}
+            required
+          />
+        </div>
+        <button type="submit" className="add-product-button">
+          Add Product
+        </button>
+
+        </form>
+      </div>
+    )
       
   };
-
-  return (
-    <div>AddProduct</div>
-  )
 }
 
 export default AddProductForm;
