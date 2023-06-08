@@ -1,5 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
+import ProductListing from './components/prodlist/ProductListing';
 
 function App() {
   return (
