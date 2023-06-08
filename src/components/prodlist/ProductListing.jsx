@@ -5,13 +5,17 @@ import AddProductForm from "../addprods/AddProductForm";
 // step1: declare state variables
 function ProductListing() {
   const [products, setProducts] = useState([]);
-
+  const [showAddForm, setShowAddForm] = useState(false);
+  
   useEffect(() => {
     // step2: fetch products
      fetch("http://localhost:3000/products")
      .then((response) => response.json())
      .then((data) => setProducts(data));
   }, []);
+
+
+  //  
 
   return (
     <div className="background-container">
@@ -29,7 +33,7 @@ function ProductListing() {
           </nav>
           {showAddForm && (
           <div className="add-product-form-container">
-            {/* a-prod2: when showAddForm is true, render AddProductForm*/}
+            {/* a-prod3: when showAddForm is true, render AddProductForm*/}
             <AddProductForm onProductAdded={handleProductAdded} />
           </div>
           )}
