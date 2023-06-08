@@ -76,44 +76,6 @@ const Modify = () => {
 
         <br />
 
-        <label htmlFor="supplier">Supplier/Vendor:</label>
-        <input
-            type="text"
-            id="supplier"
-            value={supplier}
-            onChange={(e) => setSupplier(e.target.value)}
-            placeholder="Enter Supplier/Vendor Name"
-            required
-        />
-
-        <br />
-
-        <label htmlFor="location">Store/Stock Location:</label>
-        <input
-            type="text"
-            id="location"
-            value={location}
-            onChange={(e) => setLocation(e.target.value)}
-            placeholder="Enter Store/Stock Location"
-            required
-        />
-
-        <br />
-
-        <label htmlFor="unitType">Unit standard/type:</label>
-        <select
-            id="unitType"
-            value={unitType}
-            onChange={(e) => setUnitType(e.target.value)}
-            required
-        >
-            <option value="" disabled>Select unit standard/type</option>
-            <option value="Package">Package</option>
-            <option value="Kilogram">Kilogram</option>
-        </select>
-
-        <br />
-
         <label htmlFor="stockQuantity">Stock Quantity:</label>
         <input
             type="number"
@@ -126,19 +88,9 @@ const Modify = () => {
 
         <br />
 
-        <label htmlFor="unitPrice">Unit Price:</label>
-        <input
-            type="number"
-            id="unitPrice"
-            value={unitPrice}
-            onChange={(e) => setUnitPrice(Number(e.target.value))}
-        />
-
-        <br />
-
-        <button type="submit">Submit Changes</button>
-        <button type="button">Delete Product</button>
-        <button type="button">Cancel Changes</button>
+        <button id="submitButton" type="submit">Submit Changes</button>
+        <button id="deleteButton" type="button">Delete Product</button>
+        <button i="cancelButton" type="button">Cancel Changes</button>
         </form>
     </div>
   );
