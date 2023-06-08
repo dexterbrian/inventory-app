@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Login from './components/Login';
 import { Route, Switch, useHistory } from 'react-router-dom/cjs/react-router-dom';
 import NavBar from './components/NavBar';
+import Modify from './components/modify/Modify';
 
 function App() {
 
@@ -29,9 +30,11 @@ function App() {
         <h2>Add Product</h2>
       </Route>
       <Route exact path="/edit">
-        <h2>Edit Product</h2>
+        <Modify />
       </Route>
     </Switch>
+      {/* {Our parent component will go here} */}
+      
     </div>
   );
 }
