@@ -7,11 +7,7 @@ const Modify = () => {
   const [productName, setProductName] = useState('');
   const [productType, setProductType] = useState('');
   const [productDescription, setProductDescription] = useState('');
-  const [supplier, setSupplier] = useState('');
-  const [location, setLocation] = useState('');
-  const [unitType, setUnitType] = useState('');
   const [stockQuantity, setStockQuantity] = useState(0);
-  const [unitPrice, setUnitPrice] = useState(0);
   
   const handleFormSubmit = (e) => {
     e.preventDefault();
