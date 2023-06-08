@@ -11,11 +11,11 @@
     color: white;
   }
 
-#productId, #productName, #stockQuantity, #submitButton, #deleteButton, #cancelButton, select, textarea {
+/* #productId, #productName, #stockQuantity, #submitButton, #deleteButton, #cancelButton, select, textarea {
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: calc(10px + 2vmin);
-}
+} */
