@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./ProductListing.css";
+import AddProductForm from "../addprods/AddProductForm";
 
 // step1: declare state variables
 function ProductListing() {
@@ -10,15 +11,22 @@ function ProductListing() {
      fetch("http://localhost:3000/products")
      .then((response) => response.json())
      .then((data) => setProducts(data));
- }, []);
+  }, []);
 
   return (
     <div className="background-container">
         <div className="product-container">
+
           <nav className="listings-header">
             <h2 className="product-title">Home Products</h2>
-            <button className="add-product-button">+ New Product</button>
+            <button
+            className="add-product-button"
+            onClick={() => setShowAddForm(!showAddForm)}
+            >
+            {showAddForm ? "Cancel" : "+ New Product"}
+          </button>
           </nav>
+
           <table className="product-table">
             <thead>
               <tr>
