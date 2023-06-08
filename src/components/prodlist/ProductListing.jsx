@@ -1,9 +1,15 @@
 import React, { useEffect, useState } from "react";
 import "./ProductListing.css";
+import { useHistory } from 'react-router-dom/cjs/react-router-dom';
 
 // step1: declare state variables
 function ProductListing() {
   const [products, setProducts] = useState([]);
+  const history = useHistory();
+
+  // function onNewProductClick() {
+  //   history.push('/add');
+  // }
 
   useEffect(() => {
     // step2: fetch products
