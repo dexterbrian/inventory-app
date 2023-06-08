@@ -1,16 +1,16 @@
-import React, { useState } from 'react'
-import "./AddProduct.css";
+import React, { useState } from "react";
+import "./AddProductForm.css";
 
-function AddProductForm() {
-    // step1: define state variables
-    let [name, setName] = useState("");
-    let [description, setDescription] = useState("");
-    let [category, setCategory] = useState("");
-    let [quantity, setQuantity] = useState("");
+function AddProductForm({ onProductAdded }) {
+  // step1: define state variables
+  let [name, setName] = useState("");
+  let [description, setDescription] = useState("");
+  let [category, setCategory] = useState("");
+  let [quantity, setQuantity] = useState("");
 
-    // step2: handleSubmit function
-    const handleSubmit = (event) => {
-      event.preventDefault();
+  // step2: handleSubmit function
+  const handleSubmit = (event) => {
+    event.preventDefault();
 
     // step3: new product object
     const newProduct = {
@@ -29,26 +29,24 @@ function AddProductForm() {
       body: JSON.stringify(newProduct),
     })
       .then((response) => response.json())
-      .then((data) => 
-      {
-        // success adding product
-        console.log("Product has been added", data);
+      .then((data) => {
+        // successful in adding product
+        onProductAdded(data);
         setName("");
         setDescription("");
         setCategory("");
         setQuantity("");
       })
-
       .catch((error) => {
-        // console.log an error if it occurs when trying to add new product :(
-        console.error("Error adding product!", error);
+        // console.log an error if it occurs when trying to add new product
+        console.error("Error adding product:", error);
       });
+  };
 
-    // step5: render the product
-    return (
-      <div className="add-product-container">
-        <form className="add-product-form" onSubmit={handleSubmit}>
-
+  // step5: render the product
+  return (
+    <div className="add-product-container">
+      <form className="add-product-form" onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="name">Name</label>
           <input
@@ -91,12 +89,9 @@ function AddProductForm() {
         <button type="submit" className="add-product-button">
           Add Product
         </button>
-
-        </form>
-      </div>
-    )
-      
-  };
+      </form>
+    </div>
+  );
 }
 
 export default AddProductForm;
