@@ -16,7 +16,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Inventory App</h1>
+      <h1>Invento</h1>
       
       { isLoggedIn ? <NavBar setLoggedIn={ setLoggedIn }/> : null }
       <Switch>
