@@ -41,7 +41,7 @@ function Login({ setLoggedIn, setNotification }) {
                 <div>
                 <input type="password" name="password" placeholder="Password" onChange={ onPasswordChange } />
                 </div>
-                <input type="submit" value="Submit" />
+                <input type="submit" value="Login" />
             </form>
         </div>
     );
