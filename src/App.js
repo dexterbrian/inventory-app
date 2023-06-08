@@ -16,7 +16,7 @@ function App() {
     <div className="App">
       <h1>Inventory App</h1>
       
-      { isLoggedIn ? <NavBar /> : null }
+      { isLoggedIn ? <NavBar setLoggedIn={ setLoggedIn }/> : null }
       <Switch>
       <Route exact path="/">
         {
@@ -26,8 +26,11 @@ function App() {
       <Route exact path="/login">
         <Login setLoggedIn={ setLoggedIn } setNotification={ setNotification }/>
       </Route>
+      <Route exact path="/logout">
+        <Login setLoggedIn={ setLoggedIn } setNotification={ setNotification }/>
+      </Route>
       <Route exact path="/add">
-        <h2>Add Product</h2>
+        <Modify />
       </Route>
       <Route exact path="/edit">
         <Modify />

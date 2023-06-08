@@ -11,7 +11,7 @@ const linkStyles = {
   color: "white",
 };
 
-function NavBar() {
+function NavBar({ setLoggedIn }) {
   return (
     <div>
       <NavLink
@@ -31,8 +31,9 @@ function NavBar() {
         activeStyle={{
           background: "darkblue",
         }}
+        onClick={ (e) => setLoggedIn(false)}
       >
-        Login
+        Logout
       </NavLink>
     </div>
   );
