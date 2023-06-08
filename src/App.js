@@ -20,7 +20,7 @@ function App() {
       <Switch>
       <Route exact path="/">
         {
-          isLoggedIn ? <div><h2>All Products</h2><ProductListing /></div> : history.push('login')
+          isLoggedIn ? <ProductListing /> : history.push('login')
         }
       </Route>
       <Route exact path="/login">
