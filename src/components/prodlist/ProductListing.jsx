@@ -1,50 +1,46 @@
 import React, { useEffect, useState } from "react";
 import "./ProductListing.css";
 import { useHistory } from 'react-router-dom/cjs/react-router-dom';
-import AddProductForm from "../addprods/AddProductForm";
+import { baseUrl } from "../baseUrl";
+import SearchBox from "../SearchBox";
 
 // step1: declare state variables
-function ProductListing() {
-  const [products, setProducts] = useState([]);
-  const [showAddForm, setShowAddForm] = useState(false);
+function ProductListing({ products, setProducts }) {
+
+  const [ searchResults, setSearchResults ] = useState([]);
   const history = useHistory();
 
-  // function onNewProductClick() {
-  //   history.push('/add');
-  // }
+  function searchProduct(searchTerm) {
+    const results = searchTerm === '' ? products : products.filter(product => product.name.toLowerCase().includes(searchTerm));
+    setSearchResults(results);
+  }
+
+  function onAddProductClick() {
+    history.push('/add');
+  }
+
+  function onProductClick(product) {
+    history.push('/edit', product);
+  }
 
   useEffect(() => {
     // step2: fetch products
-    fetch("http://localhost:3000/products")
+    fetch(baseUrl)
       .then((response) => response.json())
       .then((data) => setProducts(data));
   }, []);
-
-  //  a-prod2: function to add new product
-  const handleProductAdded = (newProduct) => {
-    setProducts([...products, newProduct]);
-    setShowAddForm(false);
-  };
 
   return (
     <div className="background-container">
       <div className="product-container">
         <nav className="listings-header">
-          <h2 className="product-title">Home Products</h2>
+          <h2 className="product-title">All Products</h2>
+          {/* <SearchBox search={ searchProduct }/> */}
           <button
             className="add-product-button"
-            onClick={() => setShowAddForm(!showAddForm)}
-          >
-            {showAddForm ? "Cancel" : "+ New Product"}
-          </button>
-          {/*a-prod3: for AddProductForm visibility*/}
+            onClick={() => onAddProductClick() }
+          >+ New Product</button>
         </nav>
-        {showAddForm && (
-          <div className="add-product-form-container">
-            {/* a-prod4: when showAddForm is true, render AddProductForm*/} 
-            <AddProductForm onProductAdded={handleProductAdded} />
-          </div>
-        )}
         <table className="product-table">
           <thead>
             <tr>
@@ -55,15 +51,29 @@ function ProductListing() {
             </tr>
           </thead>
           <tbody>
-            {/* step3: Map over the products array and display product details */}
-            {products.map((product) => (
-              <tr key={product.id}>
-                <td>{product.name}</td>
-                <td>{product.description}</td>
-                <td>{product.category}</td>
-                <td>{product.quantity}</td>
-              </tr>
-            ))}
+            {
+              // searchResults === 0 ? 
+                products.map(
+                  (product) => (
+                    <tr key={product.id} onClick={ e => onProductClick(product) }>
+                      <td>{product.name}</td>
+                      <td>{product.description}</td>
+                      <td>{product.category}</td>
+                      <td>{product.quantity}</td>
+                    </tr>
+                  )
+                )
+              // : searchResults.map(
+              //   (product) => (
+              //     <tr key={product.id} onClick={ e => onProductClick(product) }>
+              //       <td>{product.name}</td>
+              //       <td>{product.description}</td>
+              //       <td>{product.category}</td>
+              //       <td>{product.quantity}</td>
+              //     </tr>
+              //   )
+              // )
+            }
           </tbody>
         </table>
       </div>
