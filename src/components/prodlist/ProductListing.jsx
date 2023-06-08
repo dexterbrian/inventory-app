@@ -14,14 +14,33 @@ function ProductListing() {
      .then((data) => setProducts(data));
   }, []);
 
+
+  //  a-prod2: function to add new product
+  const handleProductAdded = (newProduct) => {
+    setProducts([...products, newProduct]);
+    setShowAddForm(false);
+  };
+
   return (
     <div className="background-container">
         <div className="product-container">
 
           <nav className="listings-header">
             <h2 className="product-title">Home Products</h2>
-
+            <button
+            className="add-product-button"
+            onClick={() => setShowAddForm(!showAddForm)}
+            >
+            {showAddForm ? "Cancel" : "+ New Product"}
+          </button>
+          {/*a-prod3: for AddProductForm visibility*/}
           </nav>
+          {showAddForm && (
+          <div className="add-product-form-container">
+            {/* a-prod4: when showAddForm is true, render AddProductForm*/}
+            <AddProductForm onProductAdded={handleProductAdded} />
+          </div>
+          )}
 
           <table className="product-table">
             <thead>
