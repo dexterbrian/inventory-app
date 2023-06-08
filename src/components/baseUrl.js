@@ -1,1 +1,1 @@
-export const baseUrl = 'http://localhost:3001/products';
+export const baseUrl = 'https://invento-api.onrender.com/products';
