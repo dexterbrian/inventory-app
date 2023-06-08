@@ -1,0 +1,53 @@
+{
+    "products" : [  
+          {
+        "id": 1,
+        "name": "Leather Recliner Sofa",
+        "description": "Elegant and comfortable leather sofa.",
+        "category": "Furniture",
+        "quantity": 10
+      },
+      {
+        "id": 2,
+        "name": "Floor rug",
+        "description": "Handmade tufted rug",
+        "category": "Decor",
+        "quantity": 19
+      },
+      {
+        "id": 3,
+        "name": "Canvas Set",
+        "description": "3 sets of abstract line color paintings.",
+        "category": "Decor",
+        "quantity": 8
+      },
+      {
+        "id": 4,
+        "name": "Flush Lights",
+        "description": "Round flush mount light.",
+        "category": "Lighting",
+        "quantity": 15
+      },
+      {
+        "id": 5,
+        "name": "Curved Mirror",
+        "description": "Irregular asymmetric curved mirror.",
+        "category": "Mirrors",
+        "quantity": 7
+      },
+      {
+        "id": 6,
+        "name": "Yellow Curtains",
+        "description": "Lemon yellow modern curtains.",
+        "category": "Curtains",
+        "quantity": 12
+      },
+      {
+        "id": 7,
+        "name": "Hanging lights",
+        "description": "Loft suspended glass pendant light fixtures",
+        "category": "Lighting",
+        "quantity": 1
+      }
+      ]
+  }
