@@ -25,7 +25,14 @@ function ProductListing() {
             >
             {showAddForm ? "Cancel" : "+ New Product"}
           </button>
+          {/*a-prod1: for AddProductForm visibility*/}
           </nav>
+          {showAddForm && (
+          <div className="add-product-form-container">
+            {/* a-prod2: when showAddForm is true, render AddProductForm*/}
+            <AddProductForm onProductAdded={handleProductAdded} />
+          </div>
+          )}
 
           <table className="product-table">
             <thead>
