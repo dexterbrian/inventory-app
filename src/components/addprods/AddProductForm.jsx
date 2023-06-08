@@ -29,7 +29,8 @@ function AddProductForm(addProduct) {
       body: JSON.stringify(newProduct),
     })
       .then((response) => response.json())
-      .then((data) => {
+      .then((data) => 
+      {
         // success adding product, yaay! :)
         console.log("Product added:", data);
         setName("");
@@ -37,6 +38,11 @@ function AddProductForm(addProduct) {
         setCategory("");
         setQuantity("");
       })
+
+      .catch((error) => {
+        // console.log an error if it occurs when trying to add new product :(
+        console.error("Try again:", error);
+      });
       
   };
 
