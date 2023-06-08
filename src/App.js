@@ -1,7 +1,10 @@
+import './App.css';
+import ProductListing from './components/prodlist/ProductListing';
 import { useState } from 'react';
 import Login from './components/Login';
 import { Route, Switch, useHistory } from 'react-router-dom/cjs/react-router-dom';
 import NavBar from './components/NavBar';
+import Modify from './components/modify/Modify';
 
 function App() {
 
@@ -12,11 +15,12 @@ function App() {
   return (
     <div className="App">
       <h1>Inventory App</h1>
+      
       { isLoggedIn ? <NavBar /> : null }
       <Switch>
       <Route exact path="/">
         {
-          isLoggedIn ? <h2>All Products</h2> : history.push('login')
+          isLoggedIn ? <ProductListing /> : history.push('login')
         }
       </Route>
       <Route exact path="/login">
@@ -26,9 +30,11 @@ function App() {
         <h2>Add Product</h2>
       </Route>
       <Route exact path="/edit">
-        <h2>Edit Product</h2>
+        <Modify />
       </Route>
     </Switch>
+      {/* {Our parent component will go here} */}
+      
     </div>
   );
 }
