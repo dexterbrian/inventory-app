@@ -28,12 +28,14 @@ function AddProductForm({ isLoggedIn, products, setProducts }) {
     })
     .then((response) => response.json())
     .then((json) => {
-      // successful in adding product
+      // successful in updating product
       setProducts([...products, json]);
       setName(json.name);
       setDescription(json.description);
       setCategory(json.category);
       setQuantity(json.quantity);
+      // Show success alert
+      alert("Product updated successfully!");
     })
     .catch((error) => {
       // console.log an error if it occurs when trying to add new product
@@ -63,6 +65,8 @@ function AddProductForm({ isLoggedIn, products, setProducts }) {
       setDescription("");
       setCategory("");
       setQuantity("");
+      // Show success alert
+      alert("Product added successfully!");
     })
     .catch((error) => {
       // console.log an error if it occurs when trying to add new product
