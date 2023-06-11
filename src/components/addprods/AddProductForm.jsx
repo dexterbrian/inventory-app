@@ -71,6 +71,12 @@ function AddProductForm({ isLoggedIn, products, setProducts }) {
     });
   }
 
+  function deleteProduct() {
+    // The deleteProduct function is created here to combine functionality of Add and Update Product
+    const confirmDelete = window.confirm("Are you sure you want to delete this product?");
+    
+  }
+
   // step2: handleSubmit function
   const handleSubmit = (event) => {
     event.preventDefault();
