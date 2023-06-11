@@ -38,11 +38,7 @@ function App() {
         <Route exact path="/edit">
           <AddProductForm isLoggedIn={ isLoggedIn } products={ products } setProducts={ setProducts }/>
         </Route>
-      </Switch> 
-      <div >
-      <SearchBox /> 
-      </div> 
-        
+      </Switch>        
     </div>
   );
 }
