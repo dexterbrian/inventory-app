@@ -1,23 +1,28 @@
 import './App.css';
 import ProductListing from './components/prodlist/ProductListing';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Login from './components/Login';
 import { Route, Switch, useHistory } from 'react-router-dom/cjs/react-router-dom';
 import NavBar from './components/NavBar';
-import Modify from './components/modify/Modify';
 import AddProductForm from './components/addprods/AddProductForm';
-import SearchBox from './components/SearchBox'
+import { baseUrl } from './components/baseUrl';
 
 function App() {
 
   const history = useHistory();
   const [ isLoggedIn, setLoggedIn ] = useState(false);
+  const [ searching, setSearching ] = useState(false);
   const [ notification, setNotification ] = useState('');
   const [ products, setProducts ] = useState([]);
+  const [ searchResults, setSearchResults ] = useState([]);
 
-  
+  function searchProduct(searchTerm) {
+    const results = searchTerm === '' ? products : products.filter(product => product.name.toLowerCase().includes(searchTerm));
+    setSearchResults(results);
+    setSearching(true);
+  }
+
   useEffect(() => {
-    // step2: fetch products
     fetch(baseUrl)
       .then((response) => response.json())
       .then((data) => setProducts(data));
@@ -31,7 +36,7 @@ function App() {
       <Switch>
         <Route exact path="/">
           {
-            isLoggedIn ? <ProductListing products={ products } setProducts={ setProducts }/> : history.push('login')
+            isLoggedIn ? <ProductListing products={ searching ? searchResults : products } searchProduct={ searchProduct } /> : history.push('login')
           }
         </Route>
         <Route exact path="/login">

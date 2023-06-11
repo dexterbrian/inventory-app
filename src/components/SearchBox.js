@@ -1,27 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const InventorySearchBox = ({ onSearch }) => {
-  const [searchTerm, setSearchTerm] = useState('');
-
-  const handleChange = (event) => {
-    setSearchTerm(event.target.value);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    onSearch(searchTerm);
-  };
-
   return (
-    <form onSubmit={handleSubmit}>
+    <div>
       <input
         type="text"
-        placeholder="Search..."
-        value={searchTerm}
-        onChange={handleChange}
+        placeholder="Search a product name..."
+        onChange={ (e) => onSearch(e.target.value) }
       />
-      <button type="submit">Search</button>
-    </form>
+      </div>
   );
 };
 
