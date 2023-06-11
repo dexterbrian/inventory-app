@@ -11,7 +11,7 @@ function AddProductForm({ isLoggedIn, products, setProducts }) {
   const [ description, setDescription ] = useState(data?.description !== "" ? data?.description : "");
   const [ category, setCategory ] = useState(data?.category !== "" ? data?.category : "");
   const [ quantity, setQuantity ] = useState(data?.quantity !== "" ? data?.quantity : "");
-  
+  const [showDeleteButton, setShowDeleteButton] = useState(false);
 
   function updateProduct() {
     fetch(`${baseUrl}/${data.id}`, {
