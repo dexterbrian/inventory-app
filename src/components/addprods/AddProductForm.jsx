@@ -15,7 +15,7 @@ function AddProductForm({ isLoggedIn, products, setProducts }) {
 
   function updateProduct() {
     fetch(`${baseUrl}/${data.id}`, {
-      method: "PUT",
+      method: "PATCH",
       headers: {
         "Content-Type": "application/json",
       },
