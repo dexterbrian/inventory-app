@@ -11,7 +11,7 @@ function AddProductForm({ isLoggedIn, products, setProducts }) {
   const [ description, setDescription ] = useState(data?.description !== "" ? data?.description : "");
   const [ category, setCategory ] = useState(data?.category !== "" ? data?.category : "");
   const [ quantity, setQuantity ] = useState(data?.quantity !== "" ? data?.quantity : "");
-  const [showDeleteButton, setShowDeleteButton] = useState(false);
+  const [ showDeleteButton, setShowDeleteButton ] = useState(data); // set initial value based on data
 
   function updateProduct() {
     fetch(`${baseUrl}/${data.id}`, {
@@ -164,9 +164,11 @@ function AddProductForm({ isLoggedIn, products, setProducts }) {
         <button type="submit" className="add-product-button">
           { data ? "Edit Product" : "Add Product" }
         </button>
+        {showDeleteButton && (
         <button type="button" className="add-product-button" onClick={deleteProduct}>
             Delete Product
         </button>
+        )}
       </form>
     </div>
   );
