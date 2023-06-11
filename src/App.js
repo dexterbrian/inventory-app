@@ -4,7 +4,6 @@ import { useState } from 'react';
 import Login from './components/Login';
 import { Route, Switch, useHistory } from 'react-router-dom/cjs/react-router-dom';
 import NavBar from './components/NavBar';
-import Modify from './components/modify/Modify';
 import AddProductForm from './components/addprods/AddProductForm';
 
 function App() {
