@@ -76,7 +76,13 @@ function AddProductForm({ isLoggedIn, products, setProducts }) {
     event.preventDefault();
 
     // step4: POST request to add new Product to backend
-    data ? updateProduct() : addProduct()
+    if (data) {
+      // showing the delete button when there is data in addition to updating an existing product
+      setShowDeleteButton(true)
+      updateProduct()
+    } else {
+      addProduct()
+    }
   };
 
   // step5: render the product
