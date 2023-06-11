@@ -74,7 +74,34 @@ function AddProductForm({ isLoggedIn, products, setProducts }) {
   function deleteProduct() {
     // The deleteProduct function is created here to combine functionality of Add and Update Product
     const confirmDelete = window.confirm("Are you sure you want to delete this product?");
-    
+    if (confirmDelete) {
+      fetch(`${baseUrl}/${data.id}`, {
+        method: "DELETE",
+      })
+        .then((response) => {
+          if (response.ok) {
+            // Remove the product from the products array
+            const updatedProducts = products.filter(
+              (product) => product.id !== data.id
+            );
+            setProducts(updatedProducts);
+            // Reset the form fields
+            setName("");
+            setDescription("");
+            setCategory("");
+            setQuantity("");
+            // Hide the delete button
+            setShowDeleteButton(false);
+          } else {
+            console.error("Failed to delete product:");
+            throw new Error("Failed to delete product");
+          }
+        })
+        .catch((error) => {
+          console.error("Error deleting product:", error);
+          alert("Error deleting product:", error);
+        });
+    }
   }
 
   // step2: handleSubmit function
