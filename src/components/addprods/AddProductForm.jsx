@@ -11,11 +11,11 @@ function AddProductForm({ isLoggedIn, products, setProducts }) {
   const [ description, setDescription ] = useState(data?.description !== "" ? data?.description : "");
   const [ category, setCategory ] = useState(data?.category !== "" ? data?.category : "");
   const [ quantity, setQuantity ] = useState(data?.quantity !== "" ? data?.quantity : "");
-  
+  const [ showDeleteButton, setShowDeleteButton ] = useState(data); // set initial value based on data
 
   function updateProduct() {
     fetch(`${baseUrl}/${data.id}`, {
-      method: "PUT",
+      method: "PATCH",
       headers: {
         "Content-Type": "application/json",
       },
@@ -28,12 +28,14 @@ function AddProductForm({ isLoggedIn, products, setProducts }) {
     })
     .then((response) => response.json())
     .then((json) => {
-      // successful in adding product
+      // successful in updating product
       setProducts([...products, json]);
       setName(json.name);
       setDescription(json.description);
       setCategory(json.category);
       setQuantity(json.quantity);
+      // Show success alert
+      alert("Product updated successfully!");
     })
     .catch((error) => {
       // console.log an error if it occurs when trying to add new product
@@ -63,6 +65,8 @@ function AddProductForm({ isLoggedIn, products, setProducts }) {
       setDescription("");
       setCategory("");
       setQuantity("");
+      // Show success alert
+      alert("Product added successfully!");
     })
     .catch((error) => {
       // console.log an error if it occurs when trying to add new product
@@ -71,12 +75,51 @@ function AddProductForm({ isLoggedIn, products, setProducts }) {
     });
   }
 
+  function deleteProduct() {
+    // The deleteProduct function is created here to combine functionality of Add and Update Product
+    const confirmDelete = window.confirm("Are you sure you want to delete this product?");
+    if (confirmDelete) {
+      fetch(`${baseUrl}/${data.id}`, {
+        method: "DELETE",
+      })
+        .then((response) => {
+          if (response.ok) {
+            // Remove the product from the products array
+            const updatedProducts = products.filter(
+              (product) => product.id !== data.id
+            );
+            setProducts(updatedProducts);
+            // Reset the form fields
+            setName("");
+            setDescription("");
+            setCategory("");
+            setQuantity("");
+            // Hide the delete button
+            setShowDeleteButton(false);
+          } else {
+            console.error("Failed to delete product:");
+            throw new Error("Failed to delete product");
+          }
+        })
+        .catch((error) => {
+          console.error("Error deleting product:", error);
+          alert("Error deleting product:", error);
+        });
+    }
+  }
+
   // step2: handleSubmit function
   const handleSubmit = (event) => {
     event.preventDefault();
 
     // step4: POST request to add new Product to backend
-    data ? updateProduct() : addProduct()
+    if (data) {
+      // showing the delete button when there is data in addition to updating an existing product
+      setShowDeleteButton(true)
+      updateProduct()
+    } else {
+      addProduct()
+    }
   };
 
   // step5: render the product
@@ -125,6 +168,11 @@ function AddProductForm({ isLoggedIn, products, setProducts }) {
         <button type="submit" className="add-product-button">
           { data ? "Edit Product" : "Add Product" }
         </button>
+        {showDeleteButton && (
+        <button type="button" className="add-product-button" onClick={deleteProduct}>
+            Delete Product
+        </button>
+        )}
       </form>
     </div>
   );
