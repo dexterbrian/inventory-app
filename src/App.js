@@ -6,6 +6,7 @@ import { Route, Switch, useHistory } from 'react-router-dom/cjs/react-router-dom
 import NavBar from './components/NavBar';
 import Modify from './components/modify/Modify';
 import AddProductForm from './components/addprods/AddProductForm';
+import SearchBox from './components/SearchBox'
 
 function App() {
 
@@ -37,7 +38,11 @@ function App() {
         <Route exact path="/edit">
           <AddProductForm isLoggedIn={ isLoggedIn } products={ products } setProducts={ setProducts }/>
         </Route>
-      </Switch>      
+      </Switch> 
+      <div >
+      <SearchBox /> 
+      </div> 
+        
     </div>
   );
 }

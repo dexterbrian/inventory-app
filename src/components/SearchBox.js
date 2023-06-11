@@ -1,17 +1,28 @@
-import React from "react";
+import React, { useState } from 'react';
 
-function SearchBox({ search }) {
+const InventorySearchBox = ({ onSearch }) => {
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const handleChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    onSearch(searchTerm);
+  };
 
   return (
-    <div>
+    <form onSubmit={handleSubmit}>
       <input
         type="text"
-        placeholder="Search for a product"
-        onChange={ (e) => search(e.target.value) }
+        placeholder="Search..."
+        value={searchTerm}
+        onChange={handleChange}
       />
-      <i className="circular search link icon"></i>
-    </div>
+      <button type="submit">Search</button>
+    </form>
   );
-}
+};
 
-export default SearchBox;
+export default InventorySearchBox;
