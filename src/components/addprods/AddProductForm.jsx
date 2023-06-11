@@ -137,6 +137,9 @@ function AddProductForm({ isLoggedIn, products, setProducts }) {
         <button type="submit" className="add-product-button">
           { data ? "Edit Product" : "Add Product" }
         </button>
+        <button type="button" className="add-product-button" onClick={deleteProduct}>
+            Delete Product
+        </button>
       </form>
     </div>
   );
