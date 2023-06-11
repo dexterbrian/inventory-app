@@ -15,6 +15,14 @@ function App() {
   const [ notification, setNotification ] = useState('');
   const [ products, setProducts ] = useState([]);
 
+  
+  useEffect(() => {
+    // step2: fetch products
+    fetch(baseUrl)
+      .then((response) => response.json())
+      .then((data) => setProducts(data));
+  }, []);
+
   return (
     <div className="App">
       <h1>Invento</h1>
