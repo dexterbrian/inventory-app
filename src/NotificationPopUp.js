@@ -30,6 +30,14 @@ const NotificationPopup = () => {
     });
     setNotification({ message: "Error editing product.", type: "error" });
   };
+
+  return (
+    <div>
+      {notification && (
+        <Notification message={notification.message} type={notification.type} />
+      )}
+      
+  );
 };
 
 export default NotificationPopup;
