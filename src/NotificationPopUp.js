@@ -12,4 +12,11 @@ const NotificationPopup = () => {
       setNotification({ message: 'Error deleting product.', type: 'error' });
     };
 
+    const handleAddProduct = () => {
+        setNotification({ message: 'Product added successfully!', type: 'success' });
+        setNotification({ message: 'Error adding product.', type: 'error' });
+      };
     
+    
+
+export default NotificationPopup;
