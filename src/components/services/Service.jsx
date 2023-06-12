@@ -1,14 +1,15 @@
-import React from 'react'
+import React from 'react';
 import "./Service.css";
 import { FaRegBookmark } from 'react-icons/fa';
 
 function Service() {
   return (
-    <div>
-         <div className='services-heading'>
+    <div className='services' id='services'>
+        <div className='services-heading'>
             <h2>Our Services</h2>
             <p>These are the services we offer</p>
         </div>
+
         <div className='service-container'>
             <div className='service-row'>
                 <div className='service'>
@@ -47,4 +48,4 @@ function Service() {
   )
 }
 
-export default Service
+export default Service;
