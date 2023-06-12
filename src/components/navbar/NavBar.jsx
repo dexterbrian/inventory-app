@@ -1,29 +1,22 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import "./NavBar.css";
 
-const NavBar = () => {
+function NavBar() {
   return (
     <nav className="navbar">
-        <h1 className="logo">INVENTO</h1>
-    
-        <ul className="nav-links">
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/services">Services</Link>
-          </li>
-          <li>
-            <Link to="/footer">Footer</Link>
-          </li>
-        </ul>
-    
-      <div className="navbar-right">
-        <button className="login-button">Login</button>
-      </div>
+        <div className='navbar-container'>
+                <h1 className="logo">INVENTO</h1>
+            
+                <ul className="nav-links">
+                    <Link to="/"><li>Home</li></Link>
+                    <Link to="/about"><li>About</li></Link>
+                    <Link to="/service"><li>Services</li></Link>
+                    <Link to="/footer"><li>Contact Us</li></Link>
+                </ul>
+            
+                <button className="login-button">Login</button>
+                </div>
     </nav>
   );
 };
