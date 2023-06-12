@@ -5,7 +5,7 @@ import Login from './components/Login';
 import { Route, Switch, useHistory } from 'react-router-dom/cjs/react-router-dom';
 import NavBar from './components/NavBar';
 import AddProductForm from './components/addprods/AddProductForm';
-import { baseUrl } from './components/baseUrl';
+import { baseUrl, prodUrl } from './components/baseUrl';
 import Home from './components/home/Home';
 import WelcomeNavBar from './components/navbar/WelcomeNavBar';
 import Welcome from './components/Welcome';
@@ -26,7 +26,7 @@ function App() {
   }
 
   useEffect(() => {
-    fetch(baseUrl)
+    fetch(prodUrl)
       .then((response) => response.json())
       .then((data) => setProducts(data));
   }, []);

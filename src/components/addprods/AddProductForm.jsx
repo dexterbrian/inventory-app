@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./AddProductForm.css";
-import { baseUrl } from "../baseUrl";
+import { baseUrl, prodUrl } from "../baseUrl";
 import { useLocation } from 'react-router-dom';
 
 function AddProductForm({ isLoggedIn, products, setProducts }) {
@@ -14,7 +14,7 @@ function AddProductForm({ isLoggedIn, products, setProducts }) {
   const [ showDeleteButton, setShowDeleteButton ] = useState(data); // set initial value based on data
 
   function updateProduct() {
-    fetch(`${baseUrl}/${data.id}`, {
+    fetch(`${prodUrl}/${data.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -45,7 +45,7 @@ function AddProductForm({ isLoggedIn, products, setProducts }) {
   }
 
   function addProduct() {
-    fetch(baseUrl, {
+    fetch(prodUrl, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -79,7 +79,7 @@ function AddProductForm({ isLoggedIn, products, setProducts }) {
     // The deleteProduct function is created here to combine functionality of Add and Update Product
     const confirmDelete = window.confirm("Are you sure you want to delete this product?");
     if (confirmDelete) {
-      fetch(`${baseUrl}/${data.id}`, {
+      fetch(`${prodUrl}/${data.id}`, {
         method: "DELETE",
       })
         .then((response) => {
