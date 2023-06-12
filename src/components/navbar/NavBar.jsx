@@ -4,7 +4,7 @@ import "./NavBar.css";
 
 function NavBar() {
   return (
-    <nav className="navbar">
+    <nav className="navbar" id='navbar'>
         <div className='navbar-container'>
                 <h1 className="logo">INVENTO</h1>
             

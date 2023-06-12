@@ -1,10 +1,9 @@
 import React from 'react';
 import "./Home.css";
-import NavBar from '../navbar/NavBar';
 
 function Home() {
   return (
-    <div className='home'>
+    <div className='home' id='home'>
        <h1 className='home-title'>Empowering Inventory Management</h1>
        <h3 className='home-slogan'>Unlock Your Business Potential 
        with Invento: The Ultimate Inventory Management Solution for Streamlined
