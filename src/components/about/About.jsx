@@ -7,6 +7,7 @@ function About() {
     <div className='about' id='about'>
         <div className='about-heading'>
              <h2>About Us</h2>
+             <p>This is the content in the about section</p>
         </div>
         <div className='about-container'>
             <section className='about-section'>
@@ -14,6 +15,7 @@ function About() {
                     <img src={bkg} alt=''/>
                 </div>
                 <div className='about-content'>
+                    <h3>lorem ipsum dolor de nuit </h3>
                     <p>The inventory management app, Invento, simplifies the 
                         process of organizing and tracking inventory for businesses 
                         of all sizes. With its user-friendly interface and powerful features, 
