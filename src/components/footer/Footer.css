@@ -2,14 +2,14 @@
 
 .footer{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, auto));
-    gap: 2.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(100px, auto));
+    gap: 1rem;
     background: #002e6e;
-    padding: 30px;
+    padding: 20px 40px;
 }
 
 .contact-box h4{
-    margin-bottom: 1,5rem;
+    margin-bottom: 1.5rem;
     font-size: 15px;
     color: white;
 }
@@ -35,9 +35,10 @@
 }
 
 .contact-box li a:hover{
-    transform: translateX(7px);
+    transform: scale(1.1);
     text-decoration: none;
     color: #f06f05;
+    font-weight: bold;
 }
 
 .contact-box h5{
@@ -58,22 +59,23 @@
 }
 
 .social .social-icon {
-    height: 20px;
-    width: 20px;
-    background: transparent;
+    height: 40px;
+    width: 40px;
     border: 2px solid #f06f05; 
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    font-size: 12px; 
-    margin-right: 1.1rem;
+    font-size: 18px; 
+    margin-right: 1rem;
     color: white;
     transition: all 0.5s ease;
     padding: 10px;
 }
-  
+
 .social .social-icon:hover {
-    background: #f06f05;
-    color: #002e6e;
+    background-color: #f06f05;
 }
+ 
+
+
