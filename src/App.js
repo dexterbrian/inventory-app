@@ -6,6 +6,9 @@ import { Route, Switch, useHistory } from 'react-router-dom/cjs/react-router-dom
 import NavBar from './components/NavBar';
 import AddProductForm from './components/addprods/AddProductForm';
 import { baseUrl } from './components/baseUrl';
+import Home from './components/home/Home';
+import WelcomeNavBar from './components/navbar/WelcomeNavBar';
+import Welcome from './components/Welcome';
 
 function App() {
 
@@ -30,13 +33,12 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Invento</h1>
       
-      { isLoggedIn ? <NavBar setLoggedIn={ setLoggedIn }/> : null }
+      { isLoggedIn ? <div><h1>Invento</h1><NavBar setLoggedIn={ setLoggedIn }/></div>: <WelcomeNavBar /> }
       <Switch>
         <Route exact path="/">
           {
-            isLoggedIn ? <ProductListing products={ searching ? searchResults : products } searchProduct={ searchProduct } /> : history.push('login')
+            isLoggedIn ? <ProductListing products={ searching ? searchResults : products } searchProduct={ searchProduct } /> : history.push('welcome')
           }
         </Route>
         <Route exact path="/login">
@@ -50,6 +52,9 @@ function App() {
         </Route>
         <Route exact path="/edit">
           <AddProductForm isLoggedIn={ isLoggedIn } products={ products } setProducts={ setProducts }/>
+        </Route>
+        <Route exact path="/welcome">
+          <Welcome />
         </Route>
       </Switch>        
     </div>
