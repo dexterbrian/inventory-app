@@ -5,18 +5,31 @@ const Notification = ({ message, type }) => {
 };
 
 const NotificationPopup = () => {
-    const [notification, setNotification] = useState(null);
-  
-    const handleDeleteProduct = () => {
-      setNotification({ message: 'Product deleted successfully!', type: 'success' });
-      setNotification({ message: 'Error deleting product.', type: 'error' });
-    };
+  const [notification, setNotification] = useState(null);
 
-    const handleAddProduct = () => {
-        setNotification({ message: 'Product added successfully!', type: 'success' });
-        setNotification({ message: 'Error adding product.', type: 'error' });
-      };
-    
-    
+  const handleDeleteProduct = () => {
+    setNotification({
+      message: "Product deleted successfully!",
+      type: "success",
+    });
+    setNotification({ message: "Error deleting product.", type: "error" });
+  };
+
+  const handleAddProduct = () => {
+    setNotification({
+      message: "Product added successfully!",
+      type: "success",
+    });
+    setNotification({ message: "Error adding product.", type: "error" });
+  };
+
+  const handleEditProduct = () => {
+    setNotification({
+      message: "Product edited successfully!",
+      type: "success",
+    });
+    setNotification({ message: "Error editing product.", type: "error" });
+  };
+};
 
 export default NotificationPopup;
