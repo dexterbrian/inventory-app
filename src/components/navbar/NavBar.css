@@ -59,18 +59,23 @@ li {
     text-transform: capitalize;
     font-family: 'Montserrat', sans-serif;
     text-decoration: none;
+    position: relative; /* Added */
 }
-  
-.nav-links li a {
-    text-decoration: none;
-    list-style-type: none;
+
+.nav-links li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 2px;
+    background-color: transparent;
+    transition: background-color 0.3s ease; /* Added */
 }
-  
-.nav-links li:hover {
-    text-decoration: underline;
-    transition: text-decoration 0.3s ease;
+
+.nav-links li:hover::before {
+    background-color: #002e6e;
 }
-  
 
 .login-button {
     color: white;
