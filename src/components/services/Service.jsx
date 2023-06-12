@@ -4,7 +4,12 @@ import { FaRegBookmark } from 'react-icons/fa';
 
 function Service() {
   return (
-    <div>Service</div>
+    <div>
+         <div className='services-heading'>
+            <h2>Our Services</h2>
+            <p>These are the services we offer</p>
+        </div>
+    </div>
   )
 }
 
