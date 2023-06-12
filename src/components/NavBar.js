@@ -6,9 +6,8 @@ const linkStyles = {
   width: "50px",
   padding: "12px",
   margin: "0 6px 6px",
-  background: "blue",
-  textDecoration: "none",
-  color: "white",
+  textDecoration: "underline",
+  color: "black",
 };
 
 function NavBar({ setLoggedIn }) {
@@ -19,7 +18,7 @@ function NavBar({ setLoggedIn }) {
         exact
         style={linkStyles}
         activeStyle={{
-          background: "darkblue",
+          textDecoration: "none"
         }}
       >
         Home
@@ -29,7 +28,7 @@ function NavBar({ setLoggedIn }) {
         exact
         style={linkStyles}
         activeStyle={{
-          background: "darkblue",
+          textDecoration: "none"
         }}
         onClick={ (e) => setLoggedIn(false)}
       >
