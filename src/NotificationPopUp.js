@@ -36,7 +36,10 @@ const NotificationPopup = () => {
       {notification && (
         <Notification message={notification.message} type={notification.type} />
       )}
-      
+      <button onClick={() => handleDeleteProduct}>Delete Product</button>
+      <button onClick={handleAddProduct}>Add Product</button>
+      <button onClick={() => handleEditProduct}>Edit Product</button>
+    </div>
   );
 };
 
