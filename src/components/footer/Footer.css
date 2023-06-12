@@ -1,0 +1,17 @@
+.footer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, auto));
+    gap: 2.5rem;
+    background: #002e6e;
+}
+
+.contact-box h4{
+    margin-bottom: 1,5rem;
+    font-size: 15px;
+    color: white;
+}
+
+.contact-box li{
+    margin-bottom: 18px;
+    text-decoration: none;
+}
