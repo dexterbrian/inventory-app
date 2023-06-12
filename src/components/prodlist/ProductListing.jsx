@@ -39,6 +39,7 @@ function ProductListing({ products, searchProduct, searchResults }) {
           </thead>
           <tbody>
             {
+              products.length === 0 ? <div class="no-search-results">No matching product found</div> :
               products.map(
                 (product) => (
                   <Product key={ product.id } product={ product } onProductClick={ onProductClick } />
