@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const Notification = ({ message, type }) => {
   return <div className={`notification ${type}`}>{message}</div>;
