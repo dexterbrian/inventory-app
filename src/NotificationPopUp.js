@@ -5,11 +5,21 @@ const Notification = ({ message, type }) => {
 };
 
 const NotificationPopup = () => {
-  const [notification, setNotification] = useState(null);
+  const [notification, setNotification] = useState();
+
+  useEffect(() => {
+    if (notification) {
+      const timeout = setTimeout(() => {
+        setNotification();
+      }, 3000);
+
+      return () => clearTimeout(timeout);
+    }
+  }, [notification]);
 
   const handleDeleteProduct = () => {
     setNotification({
-      message: "Product deleted successfully!",
+      message: "Product deleted successfully.",
       type: "success",
     });
     setNotification({ message: "Error deleting product.", type: "error" });
@@ -17,7 +27,7 @@ const NotificationPopup = () => {
 
   const handleAddProduct = () => {
     setNotification({
-      message: "Product added successfully!",
+      message: "Product added successfully.",
       type: "success",
     });
     setNotification({ message: "Error adding product.", type: "error" });
@@ -25,7 +35,7 @@ const NotificationPopup = () => {
 
   const handleEditProduct = () => {
     setNotification({
-      message: "Product edited successfully!",
+      message: "Product edited successfully.",
       type: "success",
     });
     setNotification({ message: "Error editing product.", type: "error" });
