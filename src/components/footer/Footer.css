@@ -1,0 +1,75 @@
+.footer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, auto));
+    gap: 2.5rem;
+    background: #002e6e;
+}
+
+.contact-box h4{
+    margin-bottom: 1,5rem;
+    font-size: 15px;
+    color: white;
+}
+
+.contact-box ul {
+    list-style-type: none;
+    padding: 0; 
+  }
+
+.contact-box li{
+    margin-bottom: 18px;
+    text-decoration: none;
+}
+
+.contact-box li a{
+    display: block;
+    color: white;
+    font-size: 12px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all .50s ease;
+}
+
+.contact-box li a:hover{
+    transform: translateX(7px);
+    text-decoration: none;
+    color: #f06f05;
+}
+
+.contact-box h5{
+    font-size: 16px;
+    font-weight: 600;
+    color: #d3d3d3;
+}
+
+.contact-box h6{
+    font-size: 14px;
+    color: white;
+    font-weight: lighter;
+}
+
+.social{
+    display: flex;
+    margin-top: 1.8rem;
+}
+
+.social .social-icon {
+    height: 20px;
+    width: 20px;
+    background: transparent;
+    border: 2px solid #f06f05; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 12px; 
+    margin-right: 1.1rem;
+    color: white;
+    transition: all 0.5s ease;
+    padding: 10px;
+}
+  
+.social .social-icon:hover {
+    background: #f06f05;
+    color: #002e6e;
+}

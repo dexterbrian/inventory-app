@@ -1,0 +1,32 @@
+.home {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to right, #002e6e, #017387);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    text-align: justify;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.5;
+}
+
+.home-title {
+    bottom: 15%;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: white;
+    font-size: 50px;
+}
+
+.home-slogan {
+    color: white;
+    letter-spacing: 2px;
+    padding-left: 20%;
+    padding-right: 20%;
+    font-size: 16px;
+    line-height: 2;
+}
