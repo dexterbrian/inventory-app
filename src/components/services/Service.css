@@ -8,5 +8,10 @@
 .services-heading h2 {
     font-size: 50px;
     color: #002e6e;
-  
+    margin-bottom: 60px;
+    padding-top: 10%;
+    letter-spacing: 2px;
+    text-align: center;
+    position: relative;
+    font-weight: bolder;
 }
