@@ -4,3 +4,9 @@
     padding-right: 20px;
     box-sizing: border-box;
 }
+
+.services-heading h2 {
+    font-size: 50px;
+    color: #002e6e;
+  
+}
