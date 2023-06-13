@@ -60,3 +60,7 @@
 tr {
     cursor: pointer;
 }
+
+.button-group {
+    display: flex;
+}

@@ -30,10 +30,6 @@ function Login({ onCancel, setLoggedIn, setNotification }) {
     console.log("Password:", password);
   };
 
-  const onCancelClick = () => {
-    onCancel();
-  };
-
   return (
     <div className="login-container">
       <form onSubmit={onLogin}>
@@ -51,9 +47,7 @@ function Login({ onCancel, setLoggedIn, setNotification }) {
         />
         <div className="login-buttons">
           <input type="submit" value="Login" />
-          <button type="button" onClick={onCancelClick}>
-            Cancel
-          </button>
+          
         </div>
       </form>
     </div>
