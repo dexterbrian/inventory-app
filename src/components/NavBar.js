@@ -2,19 +2,22 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import logoImage from "../images/logo2.png";
 
-const linkStyles = {
-  display: "inline-block",
-  width: "50px",
-  padding: "12px",
-  margin: "0 6px 6px",
-  textDecoration: "none",
-  color: "black",
-  fontWeight: "bolder",
+const containerStyles = {
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+  boxShadow: "2px 2px 10px rgba(114, 115, 118, 0.804)",
+  padding: "10px",
 };
 
 const logoStyles = {
-  display: "inline-flex",
+  display: "flex",
   alignItems: "center",
+};
+
+const logoImageStyles = {
+  width: "100px",
+  height: "auto",
 };
 
 const logoTextStyles = {
@@ -23,34 +26,46 @@ const logoTextStyles = {
   fontWeight: "bolder",
 };
 
+const linkStyles = {
+  display: "inline-block",
+  width: "50px",
+  padding: "12px",
+  textDecoration: "none",
+  color: "black",
+  fontWeight: "bolder",
+  marginRight: "30px",
+};
+
 function NavBar({ setLoggedIn }) {
   return (
-    <div>
+    <div style={containerStyles}>
       <div style={logoStyles}>
-        <img src={logoImage} alt="Logo" width="100" height="auto" />
+        <img src={logoImage} alt="Logo" style={logoImageStyles} />
         <span style={logoTextStyles}>INVENTO</span>
       </div>
-      <NavLink
-        to="/"
-        exact
-        style={linkStyles}
-        activeStyle={{
-          textDecoration: "none"
-        }}
-      >
-        Home
-      </NavLink>
-      <NavLink
-        to="/login"
-        exact
-        style={linkStyles}
-        activeStyle={{
-          textDecoration: "none"
-        }}
-        onClick={(e) => setLoggedIn(false)}
-      >
-        Logout
-      </NavLink>
+      <div>
+        <NavLink
+          to="/"
+          exact
+          style={linkStyles}
+          activeStyle={{
+            textDecoration: "none"
+          }}
+        >
+          Home
+        </NavLink>
+        <NavLink
+          to="/login"
+          exact
+          style={linkStyles}
+          activeStyle={{
+            textDecoration: "none"
+          }}
+          onClick={(e) => setLoggedIn(false)}
+        >
+          Logout
+        </NavLink>
+      </div>
     </div>
   );
 }

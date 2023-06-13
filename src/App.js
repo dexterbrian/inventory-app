@@ -34,7 +34,7 @@ function App() {
   return (
     <div className="App">
       
-      { isLoggedIn ? <div><h1>Invento</h1><NavBar setLoggedIn={ setLoggedIn }/></div>: <WelcomeNavBar /> }
+      { isLoggedIn ? <div><NavBar setLoggedIn={ setLoggedIn }/></div>: <WelcomeNavBar /> }
       <Switch>
         <Route exact path="/">
           {
