@@ -5,41 +5,44 @@
     box-sizing: border-box;
     margin-bottom: 30px;
 }
-
+  
 .services-heading h2 {
     font-size: 50px;
     color: #002e6e;
-    margin-bottom: 60px;
-    padding-top: 10%;
+    margin-bottom: 30px;
+    padding-top: 13px;
     letter-spacing: 2px;
-    text-align: center;
     position: relative;
-    font-weight: bolder;
+    text-align: center;
+    font-weight: 1200;
+    font-family: 'Montserrat', sans-serif;
 }
   
 .services-heading h2::after {
     content: "";
     display: block;
-    width: 50px;
+    width: 80px;
     height: 4px;
-    background-color: #f06f05;
+    background-color: rgb(240, 111, 5);
     position: absolute;
     bottom: -8px;
     left: 50%;
     transform: translateX(-50%);
 }
   
-
 .services-heading p {
     text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 30px;
 }
-
+  
 .service-row {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
 }
-
+  
 .service {
     text-align: center;
     padding: 25px 10px;
@@ -47,9 +50,9 @@
     font-size: 14px;
     cursor: pointer;
     background: transparent;
-    transition: background 0.5s ease, transform 0.3s ease;
+    transition: background 0.5s ease, transform 0.5s ease;
 }
-
+  
 .service-icon {
     font-size: 30px;
     margin-bottom: 10px;
@@ -57,19 +60,20 @@
     align-items: center;
     transition: color 0.5s ease;
 }
-
+  
 .service h3 {
     font-weight: 500;
     margin-bottom: 8px;
 }
-
+  
 .service:hover {
-    background: linear-gradient(145deg, #f8a782, #f9b99b);
+    background: linear-gradient(145deg, #cdd7e2, #e6ebf1);
     box-shadow: 2px 2px 2px #f2611e;
     transition: color 0.5s ease;
     transform: scale(1.05);
 }
-
+  
 .service:hover .service-icon {
     color: #002e6e;
 }
+  

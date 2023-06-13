@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,600;1,700&display=swap');
+
 .about {
     font-family: 'Montserrat', sans-serif;
     padding-left: 20px;
@@ -20,13 +22,13 @@
 .about-heading h2::after {
     content: "";
     display: block;
-    width: 50px;
+    width: 80px;
     height: 4px;
     background-color: rgb(240, 111, 5);
     position: absolute;
     bottom: -8px;
     left: 50%;
-    transform: translateX(-80%);
+    transform: translateX(-50%);
 }
 
 .about-heading p {
@@ -34,7 +36,6 @@
     font-size: 16px;
     font-weight: 400;
     margin-bottom: 30px;
-
 }
 
 .about-container {
@@ -68,6 +69,8 @@
 
 .about-content h3 {
     font-weight: bold;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
 }
 
 .about-content p {
@@ -80,7 +83,7 @@
 
 .read-more {
     color: white;
-    padding: 10px 20px;
+    padding: 15px 20px;
     background: #002e6e;
     width: fit-content;
     font-size: 14px;
